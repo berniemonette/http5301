@@ -1,2 +1,3 @@
-# http5301
-The course material for usability and accessibility originally developed by Simon Borer.
+# A11y Humber
+
+See posts and slides at https://simonborer.github.io/a11y
