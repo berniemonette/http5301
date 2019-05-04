@@ -1,2 +1,0 @@
-- /scripts/build.js:Remove empty directories in /slides/
-- ditch unused foundation
