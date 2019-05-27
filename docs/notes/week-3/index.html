@@ -176,10 +176,21 @@
         <div class="cell large-6 large-offset-3 medium-10 medium-offset-1">
         	<h3>Hooray for linting!</h3>
         	
-				
+		<p>Linting is automated testing of any code to check that it complies with the rules that you set up for it (usually by configuring defaults, but also by creating your own rules). 
+
+		<p>Normally what is being tested is best practices for features, syntax and formatting.</p>
+
+		<p>Linting can be done ad hoc as part of debugging (it's a great way to catch a pesky missing semicolon), although it is typically incorporated into a build process of some kind. Normally, you work on your application and allow the linter to throw errors or warnings if you're violating your team's coding standards. Additionally, linting is usually done before merging your code into your team's master or deployment version of your application, and/or as part of your deployment process. This is in case a developer turns off an annoying error during development and forgets to turn it back on.
+
+There are linters for essentially every language, including HTML, CSS and Javascript. The most common tools for this are [HTMLLint](https://github.com/htmllint/htmllint), [Stylelint](https://github.com/stylelint/stylelint), and [ESLint](https://github.com/eslint/eslint), respectively. Each of them come configured with reasonable defaults, all of which can be turned off or adjusted. Each of them can also be extended with custom rules.
+
+We can use these tools to enforce some accessibility features (more on that in a moment), but we can also add more specialized tools to our development stack. [Axe-core](https://github.com/dequelabs/axe-core) and [Lighthouse](https://github.com/GoogleChrome/lighthouse) are free tools that can lint your code specifically to flag potential accessibility issues. 
+
+We can leverage these tools to enforce _some_ accessibility requirements. It's important to keep in mind that not all accessibility features can be detected with automation, unless you are setting up very specific rulesets for each project. A significant part of accessibility is expressing the intention of your content and user interface when that intention is not inherent in your semantics. To put it another way: in HTML, we have a native button element. If we use that element, we do not have to provide additional information to the client (browser, screen reader, web crawler, et al.) about how that element will behave. The client is familiar with a button. If, however, we make a `div` _look_ like a button, that is an accessibility issue. Clients do not understand a div to be a button, even if it looks like one and says 'submit'. You have not made your intentions clear to all clients. Because the intention is vague, not only will clients not recognize it as a button, but your automated testing will not recognize it as an accessibility issue. All your automated scripts will know is that you have the word 'submit' on your page, not that you want users to be able to interact with it. Linters are code readers, not mind readers.
+
+That being said, you can use linters to detect a number of issues that may be present in your code, including (but certainly not limited to): missing `alt` attributes, missing `label`s, unsupported tags, unclosed tags, mouse-only Javascript events, turning off text-decoration for anchors in your CSS, insufficient color contrast, et al.</p>
 					
-						<p>Clone <a href="https://github.com/simonborer/a11y-linting" target='_blank'>https://github.com/simonborer/a11y-linting</a></p>
-					
+			
 				
         	
         	
